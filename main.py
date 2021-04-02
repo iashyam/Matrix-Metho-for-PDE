@@ -5,10 +5,10 @@ from scipy.linalg import det
 
 
 # THR INITIAL CONDITIONS
-v0 = 5
-m = 1
-h = 1
-a = 1
+v0 = 5 #height of the potential box is 5
+m = 1 #taking mass to be 1
+h = 1 #taking plank constant to be 1
+a = 1 #widht of potential box is 1
 E = np.linspace(0, 10, 200)
 
 Rs = []  # list of reflecing and trasmattting constant
@@ -17,10 +17,10 @@ total = []  # list of r+t
 
 i = 1j  # defining iota it is not good for me to work with j
 
-
+#scattering matrix depands in k1 and k2
 def scatterinMatrix(k1, k2):
     d = np.zeros([2, 2], dtype=complex)
-    if k2 == 0:
+    if k2 == 0: #if k32 is 0 we can take in so small
         k2 = e-10
     d[0][0] = (1+k1/k2)
     d[0][1] = (1-k1/k2)
